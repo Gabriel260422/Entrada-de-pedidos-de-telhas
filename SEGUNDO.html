@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(./FUNDO.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 60px;
+            transition: 2s;
+        }
+        .light body{
+            background-image: url(./FUNDO2.jpg);
+            transition: 2s;
+        }
+       #container{
+            border: 8px solid black;
+            width: 360px;
+            height: 600px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: rgb(62, 7, 114);
+            opacity: 0.8;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+            text-shadow: 2px 2px 2px black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 8px;
+            transition: 2s;
+        }
+        .light #container{
+            background-color: rgb(29, 97, 175);
+            transition: 2s;
+            border: 8px solid rgb(11, 78, 171);
+        }
+        #principal{
+            text-align: center;
+            padding: 10px;
+        }
+        #principal img{
+          width: 100px;
+          padding: 20px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        ul li{
+            border: 4px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 15px 40px;
+            background-color: rgb(135, 129, 129);
+            box-shadow: 3px 3px 3px purple;
+            transition: 0.5s;   
+        }
+        .light ul li{
+            border: 4px solid rgb(18, 156, 211);
+            box-shadow: 3px 3px 3px rgb(6, 1, 105);
+            
+        }
+        ul li:hover{
+           padding: 18px 50px;
+           box-shadow: 5px 5px 5px rgb(207, 12, 207);
+           background-color: rgb(107, 91, 91);
+        }
+        .light ul li:hover{
+            
+           padding: 18px 50px;
+           box-shadow: 5px 5px 5px rgb(6, 1, 105);
+           background-color: rgb(107, 91, 91);
+        
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        #icones{
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            justify-content: center;
+            font-size: 30px;
+            
+        }
+        #icones a{
+             text-decoration: none;
+             color: aliceblue;
+             transition: 0.3s;
+             border-radius: 50%;
+             padding-bottom: 4px;
+             display: flex;
+             align-items: center;
+        }
+       #icones a:hover{
+        
+        background-color: rgb(34, 147, 234);
+        padding: 10px;
+       }
+       #Trocar{
+        
+        width: 60px;
+        height: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+       }
+       #Trocar:hover{
+        width: 65px;
+        height: 25px;
+       box-shadow: 4px 4px 4px purple;
+       border-radius: 8px;
+       }
+       #Trocar button{
+           height: 30px;
+           width: 30px;
+           border-radius: 50%;
+           background-image: url(./moon-outline.svg);
+           position: absolute;
+           transition: 1s;
+           right: 0;
+       }
+       .light #Trocar button{
+        left: 0;
+        right: initial;
+        background-image: url(./sunny-outline.svg);
+        transition: 1s;
+       }
+       
+       #Trocar span{
+        background-color: gray;
+        display: block;
+        width: 60px;
+        height: 20px;
+        border-radius: 8px;
+        border: 3px solid black;
+        
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <div id="principal">
+        <img src="./icone.png" alt="FOTO DO USUARIO">
+        <h2>TESTE</h2>
+      </div>
+      <div id="Trocar">
+        <button id="Botao" onclick="Substituir()"></button>
+        <span></span>
+
+      </div>
+      <ul>
+        <li><a href="#" target="_blank">OPÇÃO 1</a></li>
+        <li><a href="#">OPÇÃO 2</a></li>
+        <li><a href="#">OPÇÃO 3</a></li>
+        <li><a href="#">OPÇÃO 4</a></li>
+    </ul>
+      <div id="icones">
+           <a href="http://" target="_blank">
+            <ion-icon name="logo-youtube"></ion-icon>
+           </a>
+           <a href="http://" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+           </a>
+           <a href="http://" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+           </a>
+           <a href="http://" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon>
+           </a>
+      </div>    
+   </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+         var Codigo = document.getElementById('html');
+         var botao = document.getElementById('Botao')
+         function Substituir(){
+            Codigo.classList.toggle('light')
+         }
+      
+         
+         
+    </script>
+</body>
+</html>

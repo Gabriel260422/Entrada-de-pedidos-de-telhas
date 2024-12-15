@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        
+        body{
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmxKEYSCsbOWbWgplekLKQSPbxKjMdAcsP1xF_P7jCgPdtVENvPx-Fi8YhhMeRdBpxbT5fW3Dy7dN8IJxtdfoLnQFOOUYnNdnDoTgQzBg7d35-PeyeO8xMUPgxBWwx2EY6Vr-knTHYGj0m/s640/praia-paradisiaca-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: fill;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        span{
+            display: flex;
+            gap: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+            height: 60px;
+            width: 60px;
+            background-color: orangered;
+            border: 4px solid black;
+        }
+        #Logo{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(199, 6, 183);
+            transform: translateX(20px);
+            border: 2px solid black;
+            
+        }
+        #Paginas_principais{
+            display: flex;
+            gap: 50px;
+        }
+        header{
+            height: 70px;
+            width: 100%;
+            background: linear-gradient(black,purple,black);
+            display: flex;
+            align-items: center;
+            gap: 70%;
+            
+        }
+        #Calculadora{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: gray;
+            width: 400px;
+            height: 600px;
+            border: 5px solid black;
+        }
+        #Calculador{
+            height: 70px;
+            width: 200px;
+            border: 3px solid black;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div id="Logo">LINDAO</div>
+      
+      <div id="Paginas_principais">
+        <a href="www.mota.com">Bônus</a>
+        <a href="www.mota.com">Decorações</a>
+        <a href="www.mota.com">Sobre</a>
+      </div>
+    </header>
+    <main>
+        <div id="Calculadora">
+            <input type="text" id="Calculador">
+            <input type="text" id="Calculador2">
+            <span>
+                <div class="button" id="button1" onclick="Variavel(this.id)">1</div>
+                <div class="button" id="button2" onclick="Variavel(this.id)">2</div>
+                <div class="button" id="button3" onclick="Variavel(this.id)">3</div>
+            </span>
+            <span>
+                <div class="button" id="button4" onclick="Variavel(this.id)">4</div>
+                <div class="button" id="button5" onclick="Variavel(this.id)">5</div>
+                <div class="button" id="button6" onclick="Variavel(this.id)">6</div>
+            </span> 
+            <span>
+                <div class="button" id="button7" onclick="Variavel(this.id)">7</div>
+                <div class="button" id="button8" onclick="Variavel(this.id)">8</div>
+                <div class="button" id="button9" onclick="Variavel(this.id)">9</div>
+            </span>
+            <span>
+                <div class="button" id="button10" onclick="Somar(this.id)">+</div>
+                <div class="button" id="button11" onclick="Variavel(this.id)">0</div>
+                <div class="button" id="button12" onclick="Subtraçao(this.id)">-</div>
+            </span>
+            <span>
+                <div class="button" id="button13" onclick="Multiplicaçao(this.id)">*</div>
+                <div class="button" id="button14" onclick="Divisao(this.id)">/</div>
+                <div class="button" id="button15" onclick="Resultados()">=</div>
+                <div class="button" id="button15" onclick="Limpar()">C</div>
+            </span>
+        </div>
+    </main>
+    <script>
+            var Calculador = document.getElementById('Calculador')
+            var Calculador2 = document.getElementById('Calculador2')
+            var Resultado = document.getElementById('button15')
+            function Limpar(){
+                Calculador.value = ""
+                Calculador2.value = ""
+            }
+        function Variavel(id){
+      
+             var numeros = document.getElementById(id)
+             var numeros_completos = Number(numeros.innerHTML)
+
+            Calculador.value = Calculador.value + numeros_completos
+        
+        }
+        function Somar(id){
+            
+            Calculador2.value = Calculador.value
+            Calculador.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Somar_Resul()')
+            
+        }
+        function Somar_Resul(){
+            
+            var Conta =Number(Number(Calculador.value) + Number(Calculador2.value))
+            Calculador.value = Conta
+            Calculador2.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Resultados()')
+
+        }
+        function Subtraçao(id){
+            
+            Calculador2.value = Calculador.value
+            Calculador.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Subtraçao_Resul()')
+            
+        }
+        function Subtraçao_Resul(){
+            
+            var Conta =Number(Number(Calculador2.value) - Number(Calculador.value))
+            Calculador.value = Conta
+            Calculador2.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Resultados()')
+
+        }
+        function Multiplicaçao(id){
+            
+            Calculador2.value = Calculador.value
+            Calculador.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Multiplicaçao_Resul()')
+            
+        }
+        function Multiplicaçao_Resul(){
+            
+            var Conta =Number(Number(Calculador.value) * Number(Calculador2.value))
+            Calculador.value = Conta
+            Calculador2.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Resultados()')
+
+        }
+        function Divisao(id){
+            
+            Calculador2.value = Calculador.value
+            Calculador.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Divisao_Resul()')
+            
+        }
+        function Divisao_Resul(){
+            
+            var Conta =Number(Number(Calculador2.value) / Number(Calculador.value))
+            Calculador.value = Conta
+            Calculador2.value = ""
+            Resultado.removeAttribute('onclick')
+            Resultado.setAttribute('onclick','Resultados()')
+
+        }
+        function Resultados(){
+            alert('INSIRA UM SEGUNDO VALOR PARA CALCULAR')
+        }
+        
+    </script>
+</body>
+</html>
